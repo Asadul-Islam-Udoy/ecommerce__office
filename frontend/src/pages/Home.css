@@ -1,0 +1,8 @@
+.bestproduct{
+    margin-top: 400px;
+}
+@media(max-width:600px){
+    .bestproduct{
+        margin-top: 255px;
+    }
+}
