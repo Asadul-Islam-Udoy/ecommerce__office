@@ -33,7 +33,7 @@ if(banners[0]?.productBanner?.length === c_image){
             </div>
           {banners[0]?.productBanner?.slice(c_image,c_image+1).map((item,index)=>(
               
-             <img loading='true' src={`http://127.0.0.1:5000/images/banners/${item.banner}`} alt={index}/>
+             <img loading='true' src={`https://ecommerce-office.onrender.com/images/banners/${item.banner}`} alt={index}/>
           ))}
         
           <div className='banner__button'>
