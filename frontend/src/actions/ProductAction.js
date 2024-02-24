@@ -48,7 +48,7 @@ export const ProductCreateAction=(fromData)=>async(dispatch)=>{
     try{
       dispatch({type:CREATE_PRODUCT_REQUEST})
       const config ={headers:{'Content-Type':'application/json'}}
-       const{data} = await axios.post('/api/v1/products/create/product',fromData);
+       const{data} = await axios.post('https://ecommerce-office.onrender.com/api/v1/products/create/product',fromData);
       dispatch({type:CREATE_PRODUCT_SUCCESS,
       payload:data.products
     })
@@ -65,7 +65,7 @@ export const GettingAdminProductAction=()=>async(dispatch)=>{
 try{
     dispatch({type:GET_ADMIN_PRODUCTS_REQUEST});
     const config = {headers:{'Content-Type':'application-json'}}
-    const{data} = await axios.get('/api/v1/products/admin/products/',config);
+    const{data} = await axios.get('https://ecommerce-office.onrender.com/api/v1/products/admin/products/',config);
     dispatch({type:GET_ADMIN_PRODUCTS_SUCCESS,
     payload:data.products
     })
@@ -81,7 +81,7 @@ catch(error){
 export const ProductUpdateAction=(id,fromData)=>async(dispatch)=>{
 try{
   dispatch({type:PRODUCT_UPDATE_REQUEST})
-  const {data} = await axios.put(`/api/v1/products/update/product/${id}/`,fromData);
+  const {data} = await axios.put(`https://ecommerce-office.onrender.com/api/v1/products/update/product/${id}/`,fromData);
   dispatch({type:PRODUCT_UPDATE_SUCCESS,
   payload:data.products
  })
@@ -99,7 +99,7 @@ export const ProductSingleAction=(id)=>async(dispatch)=>{
     try{
      dispatch({type:PRODUCT_SINGLE_REQUEST})
      const config = {headers:{'Content-Type':'application-json'}}
-     const {data} = await axios.get(`/api/v1/products/single/product/${id}/`,config);
+     const {data} = await axios.get(`https://ecommerce-office.onrender.com/api/v1/products/single/product/${id}/`,config);
      dispatch({type:PRODUCT_SINGLE_SUCCESS,
      payload:data.product
     })
@@ -116,7 +116,7 @@ export const ProductSingleAction=(id)=>async(dispatch)=>{
     try{
      dispatch({type:GET_ALL_PRODUCTS_REQUEST})  
      const config ={headers:{'Content-Type':'application/json'}}
-     const link = `/api/v1/products/search/products?keyword=${keyword}&price[gte]=${price[0]}&price[lte]=${price[1]}`
+     const link = `https://ecommerce-office.onrender.com/api/v1/products/search/products?keyword=${keyword}&price[gte]=${price[0]}&price[lte]=${price[1]}`
      const{data} = await axios.get(link) 
      dispatch({type:GET_ALL_PRODUCTS_SUCCESS,
      payload:data.products
@@ -133,7 +133,7 @@ export const ProductDeleteAction=(id)=>async(dispatch)=>{
     try{
      dispatch({type:PRODUCT_DELETE_REQUEST})
      const config = {headers:{'Content-Type':'application-json'}}
-     const {data} = await axios.delete(`/api/v1/products/delete/product/${id}/`,config);
+     const {data} = await axios.delete(`https://ecommerce-office.onrender.com/api/v1/products/delete/product/${id}/`,config);
      dispatch({type:PRODUCT_DELETE_SUCCESS,
      payload:data.product
     })
@@ -150,7 +150,7 @@ export const GetCategoryProductAction=(id)=>async(dispatch)=>{
 try{
  dispatch({type:GET_PRODUCTS_CATEGORY_REQUEST})
  const config = {headers:{'Content-Type':'application/json'}}
- const{data} = await axios.get(`/api/v1/products/get/category/products/${id}/`,config)
+ const{data} = await axios.get(`https://ecommerce-office.onrender.com/api/v1/products/get/category/products/${id}/`,config)
  dispatch({type:GET_PRODUCTS_CATEGORY_SUCCESS,
 payload:data.products
 })
@@ -167,7 +167,7 @@ export const ProductReviewCreateAction=(id,formData)=>async(dispatch)=>{
   try{
    dispatch({type:PRODUCT_REVIEW_CREATE_REQUEST});
    const config ={headers:{'Content-Type':'application/json'}};
-   const{data} = await axios.put(`/api/v1/products/create/review/${id}/`,formData,config);
+   const{data} = await axios.put(`https://ecommerce-office.onrender.com/api/v1/products/create/review/${id}/`,formData,config);
    dispatch({type:PRODUCT_REVIEW_CREATE_SUCCESS,
     payload:data
   })
@@ -184,7 +184,7 @@ export const getHomeCategoryAction=()=>async(dispatch)=>{
     try{
         dispatch({type:GET_HOME_CATEGORY_REQUEST});
         const config ={headers:{'Content-Type':'application/json'}};
-        const{data} = await axios.get('/api/v1/products/home/category',config);
+        const{data} = await axios.get('https://ecommerce-office.onrender.com/api/v1/products/home/category',config);
         dispatch({type:GET_HOME_CATEGORY_SUCCESS,
          payload:data.productList
        })
@@ -202,7 +202,7 @@ export const OfferProductAction=()=>async(dispatch)=>{
     try{
       dispatch({type:GET_OFFER_GL_PRODUCTS_REQUEST});
       const config ={headers:{'Content-Type':'application/json'}};
-      const {data} = await axios.get('/api/v1/products/offer/products/gl',config);
+      const {data} = await axios.get('https://ecommerce-office.onrender.com/api/v1/products/offer/products/gl',config);
       dispatch({type:GET_OFFER_GL_PRODUCTS_SUCCESS,
       payload:data.products
     }) 
@@ -219,7 +219,7 @@ export const HomeUniqueProductAction=()=>async(dispatch)=>{
   try{
     dispatch({type:GET_HOME_UNIQUE_PRODUCTS_REQUEST});
     const config ={headers:{'Content-Type':'application/json'}};
-    const {data} = await axios.get('/api/v1/products/home/unique/products/',config);
+    const {data} = await axios.get('https://ecommerce-office.onrender.com/api/v1/products/home/unique/products/',config);
     dispatch({type:GET_HOME_UNIQUE_PRODUCTS_SUCCESS,
     payload:data.products
   }) 
@@ -233,7 +233,7 @@ export const HomeUniqueProductAction=()=>async(dispatch)=>{
 export const homeBannerCreateAction=(id,fromData)=>async(dispatch)=>{
  try{
    dispatch({type:CREATE_BANNER_REQUEST});
-   const{data} = await axios.put(`/api/v1/banner/update/home/banners/${id}`,fromData)
+   const{data} = await axios.put(`https://ecommerce-office.onrender.com/api/v1/banner/update/home/banners/${id}`,fromData)
    dispatch({type:CREATE_BANNER_SUCCESS,
    payload:data
  })
@@ -248,7 +248,7 @@ export const homeBannerCreateAction=(id,fromData)=>async(dispatch)=>{
 export const homeBannerGetAction=()=>async(dispatch)=>{
   try{
     dispatch({type:GET_BANNER_REQUEST});
-    const{data} = await axios.get('/api/v1/banner/get/banners')
+    const{data} = await axios.get('https://ecommerce-office.onrender.com/api/v1/banner/get/banners')
     dispatch({type:GET_BANNER_SUCCESS,
     payload:data.banners
    })
