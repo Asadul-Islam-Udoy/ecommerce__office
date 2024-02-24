@@ -20,5 +20,5 @@ const storage = multer.diskStorage({
   const upload = multer({ storage: storage })
 
 router.put('/update/home/banners/:id',isUserController,isAdminController('admin'),upload.array('banners'),HomeBannerUpdateProducts);
-router.get('/get/banners',isUserController,isAdminController('admin'),GetHomeBannerUpdateProducts)
+router.get('/get/banners',GetHomeBannerUpdateProducts)
 module.exports = router
