@@ -19,7 +19,7 @@ export const GetSecritKeyAction=()=>async(dispatch)=>{
     try{
       dispatch({type:GET_SECRIT_KEY_REQUEST})
       const config = {headers:{'Content-Type':'application/json'}}
-      const{data} = await axios.get('/api/v1/orders/payment/api_key',config)
+      const{data} = await axios.get('https://ecommerce-office.onrender.com/api/v1/orders/payment/api_key',config)
       dispatch({type:GET_SECRIT_KEY_SUCCESS,
       payload:data
     })
@@ -34,7 +34,7 @@ export const AddToCardAction=(id,quantity,colors,sizes)=>async(dispatch,getState
 try{
     dispatch({type:ADD_TO_CARD_REQUEST})
     const config = {headers:{'Content-Type':'application-json'}}
-    const {data} = await axios.get(`/api/v1/products/single/product/${id}/`);
+    const {data} = await axios.get(`https://ecommerce-office.onrender.com/api/v1/products/single/product/${id}/`);
     dispatch({type:ADD_TO_CARD_SUCCESS,
        payload:{
         product:data.product._id,
@@ -81,7 +81,7 @@ export const OrderCreateAction=(fromData)=>async(dispatch)=>{
 try{
   dispatch({type:ORDER_CREATE_REQUEST})
   const config = {headers:{'Content-Type':'application/json'}}
-  const{data} = await axios.post('/api/v1/orders/create',fromData)
+  const{data} = await axios.post('https://ecommerce-office.onrender.com/api/v1/orders/create',fromData)
   dispatch({type:ORDER_CREATE_SUCCESS,
   payload:data
 })

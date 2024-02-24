@@ -242,7 +242,7 @@ useEffect(()=>{
                     <p>Old Images</p>
                     {
                         showImage.length >0 && showImage.map((item)=>(
-                            <img src={`http://localhost:5000/images/products/${item.image}`} alt='imagest'/>   
+                            <img src={`https://ecommerce-office.onrender.com/images/products/${item.image}`} alt='imagest'/>   
                         ))
                     }
                    

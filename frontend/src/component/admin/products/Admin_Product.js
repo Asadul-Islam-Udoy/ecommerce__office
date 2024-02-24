@@ -70,7 +70,7 @@ function Admin_Product({setUpdateProduct,setDeleteProduct,setProductId}) {
             renderCell:(params)=>{
              return(
               <>
-                <div><img src={`http://localhost:5000/images/products/${params.row.image}`}/></div>
+                <div><img src={`https://ecommerce-office.onrender.com/images/products/${params.row.image}`}/></div>
               </>
              )
               

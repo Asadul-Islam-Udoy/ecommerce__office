@@ -31,7 +31,7 @@ export default function BestProduct() {
          <div className='best__box'>
             <span className='offers'>Offer {item.offer}%</span>
               <Link to={`/category/single/${item.name}/${item._id}`}>
-                <img src={`http://localhost:5000/images/products/${item.productImages[0].image}`}alt={item._id}/>
+                <img src={`https://ecommerce-office.onrender.com/images/products/${item.productImages[0].image}`}alt={item._id}/>
               </Link>
              <p>{item.name}</p>
              <span><Rating style={{marginTop:'-10px'}}  name="read-only" value={item.ratings} readOnly /></span>

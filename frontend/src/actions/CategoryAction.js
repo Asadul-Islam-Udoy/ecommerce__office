@@ -28,7 +28,7 @@ export const CategoryCreateAction=(fromData)=>async(dispatch)=>{
   try{
    dispatch({type:CATEGORY_CREATE_REQUEST})
    const config = {headers:{'Content-Type':'application/json'}}
-   const {data} = await axios.post('/api/v1/category/create',fromData,config)
+   const {data} = await axios.post('https://ecommerce-office.onrender.com/api/v1/category/create',fromData,config)
    dispatch({type:CATEGORY_CREATE_SUCCESS,
    payload:data.categories
    })
@@ -45,7 +45,7 @@ export const CategoryGetAction=()=>async(dispatch)=>{
     try{
      dispatch({type:CATEGORY_GET_REQUEST})
      const config ={headers:{'Content-Type':'application/json'}}
-     const {data} = await axios.get('/api/v1/category/get',config)
+     const {data} = await axios.get('https://ecommerce-office.onrender.com/api/v1/category/get',config)
      dispatch({type:CATEGORY_GET_SUCCESS,
      payload:data.categories
      })
@@ -60,7 +60,7 @@ export const CategoryGetAction=()=>async(dispatch)=>{
     try{
      dispatch({type:CATEGORY_GET_HOME_REQUEST})
      const config ={headers:{'Content-Type':'application/json'}}
-     const {data} = await axios.get('/api/v1/category/home/get',config)
+     const {data} = await axios.get('https://ecommerce-office.onrender.com/api/v1/category/home/get',config)
      dispatch({type:CATEGORY_GET_HOME_SUCCESS,
      payload:data.categorList
      })
@@ -76,7 +76,7 @@ export const CategoryDeleteAction=(id)=>async(dispatch)=>{
     try{
      dispatch({type:CATEGORY_DELETE_REQUEST})
      const config ={headers:{'Content-Type':'application/json'}}
-     const {data} = await axios.delete(`/api/v1/category/delete/${id}`,config)
+     const {data} = await axios.delete(`https://ecommerce-office.onrender.com/api/v1/category/delete/${id}`,config)
      dispatch({type:CATEGORY_DELETE_SUCCESS,
      payload:data.categories
      })
@@ -93,7 +93,7 @@ export const CategoryDeleteAction=(id)=>async(dispatch)=>{
     try{
      dispatch({type:CATEGORY_UPDATE_REQUEST})
      const config ={headers:{'Content-Type':'application/json'}}
-     const {data} = await axios.put(`/api/v1/category/update/${id}`,fromData,config)
+     const {data} = await axios.put(`https://ecommerce-office.onrender.com/api/v1/category/update/${id}`,fromData,config)
      dispatch({type:CATEGORY_UPDATE_SUCCESS,
      payload:data.categories
      })
@@ -109,7 +109,7 @@ export const getSingleCategoryProductsAction=(categoryId,productId)=>async(dispa
   try{
   dispatch({type:GET_SINGLE_CATEGORY_PRODUCTS_REQUEST});
   const config ={headers:{'Content-Type':'application/json'}};
-  const {data} = await axios.get(`/api/v1/category/single/category/products/${categoryId}/${productId}`,config);
+  const {data} = await axios.get(`https://ecommerce-office.onrender.com/api/v1/category/single/category/products/${categoryId}/${productId}`,config);
   dispatch({type:GET_SINGLE_CATEGORY_PRODUCTS_SUCCESS,
   payload:data.products
   })
@@ -126,7 +126,7 @@ export const homeCategoryCreateAction=(id)=>async(dispatch)=>{
   try{
    dispatch({type:HOME_CATEGORY_CREATE_REQUEST})
    const config = {headers:{'Content-Type':'application/json'}};
-   const{data} = await axios.put(`/api/v1/category/home/category/create/${id}`,config);
+   const{data} = await axios.put(`https://ecommerce-office.onrender.com/api/v1/category/home/category/create/${id}`,config);
    dispatch({type:HOME_CATEGORY_CREATE_SUCCESS,
    payload:data. categories
   })

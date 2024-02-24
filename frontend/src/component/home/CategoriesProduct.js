@@ -68,7 +68,7 @@ useEffect(()=>{
         {categoryItem[key]?.slice(count_button,count_button+4).map((item,index)=>(
             <div className='category__box'>
                <Link to={`/category/single/${item.name}/${item._id}`}>
-                   <img src={`http://localhost:5000/images/products/${item.productImages[0].image}`} alt={index}/>
+                   <img src={`https://ecommerce-office.onrender.com/images/products/${item.productImages[0].image}`} alt={index}/>
                </Link>
                  <div>
                   <span>{item.name}</span>

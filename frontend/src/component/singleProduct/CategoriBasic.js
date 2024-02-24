@@ -61,7 +61,7 @@ useEffect(()=>{
            {singleProducts?.slice(count_button,count_button+4).map((item,index)=>(
                 <div className='category__box'>
                     <Link to={`/category/single/${slug}/${item._id}`}>
-                     <img onClick={()=>singleProductHandler(item._id)} src={`http://localhost:5000/images/products/${item.productImages[0].image}`} alt={index}/>
+                     <img onClick={()=>singleProductHandler(item._id)} src={`https://ecommerce-office.onrender.com/images/products/${item.productImages[0].image}`} alt={index}/>
                     </Link>
                      <div>
                       <span>{item.name}</span>

@@ -34,7 +34,7 @@ function OfferProduct() {
               <Link to={`/category/single/${item.name}/${item._id}`}>
                    <div className='offer__images'>
                  {item.offer > 0 && <div className='offer__persen__section'><p>{item.offer}%</p></div>}
-                  <img loading='true' src={`http://localhost:5000/images/products/${item.productImages[0].image}`}/>
+                  <img loading='true' src={`https://ecommerce-office.onrender.com/images/products/${item.productImages[0].image}`}/>
                   <div className='name__section'>
                      <div><span>{item.name}</span></div>
                       <br/>

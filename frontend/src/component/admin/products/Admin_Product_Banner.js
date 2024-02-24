@@ -109,7 +109,7 @@ function Admin_Product_Banner({setCreateBannerProduct}) {
                           banners[0]?.productBanner?.map((img,index)=>(
                            <div>
                              <p>old Image{index+1}</p>
-                             <img src={`http://127.0.0.1:5000/images/banners/${img.banner}`}/>
+                             <img src={`https://ecommerce-office.onrender.com/images/banners/${img.banner}`}/>
                            </div>
                          ))
                         }
