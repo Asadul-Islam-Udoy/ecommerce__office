@@ -25,7 +25,7 @@ import {
 export const UserRegistrationAction=(fromData)=>async(dispatch)=>{
 try{
     dispatch({type:REGISTER_CREATE_REQUEST})
-    const{data} = await axios.post('/api/v1/user/register/',fromData)
+    const{data} = await axios.post('https://ecommerce-office.onrender.com/api/v1/user/register/',fromData)
      dispatch({type:REGISTER_CREATE_SUCCESS,
      payload:data
     })
@@ -42,7 +42,7 @@ export const UserRegistrationOtpAction=(fromData)=>async(dispatch)=>{
         console.log(fromData)
         dispatch({type:REGISTER_OTP_REQUEST})
         const config ={headers:{'Content-Type':'application/json'}}
-        const{data} = await axios.put('/api/v1/user/is_validated/',fromData,config)
+        const{data} = await axios.put('https://ecommerce-office.onrender.com/api/v1/user/is_validated/',fromData,config)
          dispatch({type:REGISTER_OTP_SUCCESS,
          payload:data
         })
@@ -69,7 +69,7 @@ export const UserLoginAction=(fromData)=>async(dispatch)=>{
         console.log('mi',FormData)
         dispatch({type:LOGHIN_CREATE_REQUEST})
         const config ={headers:{'Content-Type':'application/json'}}
-        const{data} = await axios.post('/api/v1/user/login/',fromData,config)
+        const{data} = await axios.post('https://ecommerce-office.onrender.com/api/v1/user/login/',fromData,config)
          dispatch({type:LOGHIN_CREATE_SUCCESS,
          payload:data
         })
@@ -84,7 +84,7 @@ export const UserLoginAction=(fromData)=>async(dispatch)=>{
 // logot  module
 export const UserLogoutAction=()=>async(dispatch)=>{
         const config ={headers:{'Content-Type':'application/json'}}
-        const{data} = await axios.get('/api/v1/user/logout/',config)
+        const{data} = await axios.get('https://ecommerce-office.onrender.com/api/v1/user/logout/',config)
          dispatch({type:LOGOUT_SUCCESS,
          payload:data
         })
@@ -97,7 +97,7 @@ export const GetAllUsersAction=(id)=>async(dispatch)=>{
   try{
   dispatch({type:GET_ALL_USERS_REQUEST})
   const config ={headers:{'Content-Type':'application/json'}}
-  const{data} = await axios.get(`/api/v1/user/get/all/users/${id}`,config)
+  const{data} = await axios.get(`https://ecommerce-office.onrender.com/api/v1/user/get/all/users/${id}`,config)
    dispatch({type:GET_ALL_USERS_SUCCESS,
    payload:data.users
   })
@@ -114,7 +114,7 @@ export const PermissionUsersAction=(currentUser,roleUser,permission)=>async(disp
   try{
   dispatch({type:CREATE_PERMISSION_REQUEST})
   const config ={headers:{'Content-Type':'application/json'}}
-  const{data} = await axios.put(`/api/v1/user/role/update/${currentUser}/${roleUser}/`,permission,config)
+  const{data} = await axios.put(`https://ecommerce-office.onrender.com/api/v1/user/role/update/${currentUser}/${roleUser}/`,permission,config)
    dispatch({type:CREATE_PERMISSION_SUCCESS,
    payload:data.users
   })
