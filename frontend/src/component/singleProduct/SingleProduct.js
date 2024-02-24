@@ -141,7 +141,7 @@ const widthDecrementHandler=()=>{
                      smallImage: {
                       alt: 'Wristwatch by Ted Baker London',
                       isFluidWidth: true,
-                      src: `http://localhost:5000/images/products/${item.image}`
+                      src: `https://ecommerce-office.onrender.com/images/products/${item.image}`
                   },
                      largeImage: {
                       src: `http://localhost:5000/images/products/${item.image}`,
